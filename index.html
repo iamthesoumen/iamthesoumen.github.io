@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SOUMEN MISTRY — লেখা ও ছবি</title>
+<title>Soumen Mistry — Writing & Photography</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600&family=Noto+Sans+Bengali:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
   :root {
@@ -19,8 +19,8 @@
     --accent: #1f5c3a;
     --accent-soft: #2f7a4d;
 
-    --font-serif: "Noto Serif Bengali", "Fraunces", Georgia, serif;
-    --font-sans: "Noto Sans Bengali", "Inter", -apple-system, sans-serif;
+    --font-serif: "Fraunces", Georgia, serif;
+    --font-sans: "Inter", -apple-system, sans-serif;
 
     box-sizing: border-box;
     padding-top: env(safe-area-inset-top, 0px);
@@ -118,7 +118,7 @@
     color: var(--accent);
   }
 
-  /* ---------- hero ---------- */
+  /* ---------- home / hero ---------- */
 
   .home {
     padding: 64px 0 88px;
@@ -322,7 +322,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%);
+    filter: grayscale(0%);
     transition: transform .5s ease;
   }
 
@@ -339,44 +339,10 @@
     .gallery { grid-template-columns: repeat(2, 1fr); }
   }
 
-  /* ---------- about ---------- */
-
-  .about-body {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 62ch;
-  }
-
-  .about-body p {
-    margin: 0;
-    color: var(--ink-soft);
-    font-size: 1rem;
-  }
-
-  /* ---------- contact / footer ---------- */
-
   footer.site {
     padding: 60px 0 80px;
     border-top: 1px solid var(--line);
   }
-
-  footer.site h2 {
-    font-family: var(--font-serif);
-    font-weight: 500;
-    font-size: 1.4rem;
-    margin: 0 0 18px;
-  }
-
-  .contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 22px;
-    font-size: 0.95rem;
-    margin-bottom: 40px;
-  }
-
-  .contact-links a { text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px; color: var(--ink); }
 
   .fineprint {
     font-size: 0.8rem;
@@ -393,7 +359,7 @@
 
 <header class="site">
   <div class="wrap header-row">
-    <a class="brand" href="#top"><!-- এখানে আপনার নাম --> SOUMEN MISTRY </a>
+    <a class="brand" href="#top">Soumen Mistry</a>
     <nav class="primary">
       <a href="#top">Home</a>
       <a href="#writing">Writing</a>
@@ -408,21 +374,17 @@
     <section class="home">
       <div class="home-grid">
 
-        <!-- মূল ছবি — <img src="আপনার-ছবির-লিংক"> বসিয়ে placeholder সরিয়ে দিন -->
         <div class="home-photo">
-          <img src="20260604_154251.jpg" alt="SOUMEN MISTRY">
+          <img src="20260604_154251.jpg" alt="Soumen Mistry">
         </div>
 
         <div class="home-info">
-          <!-- নাম -->
-          <h1>SOUMEN MISTRY</h1>
-          <!-- এক লাইনে কী করেন -->
-          <p class="home-role">B.A (Hon's) in English </p>
+          <h1>Soumen Mistry</h1>
+          <p class="home-role">B.A (Hons) in English</p>
 
           <div class="home-about">
-            <!-- নিজের সম্পর্কে বিস্তারিত — কে আপনি, কী করেন -->
             <p>May Om be seated in our hearts.</p>
-            <p>দ্বিতীয় প্যারাগ্রাফে যোগ করতে পারেন অভিজ্ঞতা, বর্তমানে যা নিয়ে কাজ করছেন, বা আগ্রহের জায়গাগুলো।</p>
+            <p>Writing isn't my craft, but reading is my addiction. I teach English in the classroom, and off the clock I stay buried in novels, poetry and essays. This space mostly holds a few thoughts on what I'm reading, alongside some photographs taken along the way.</p>
           </div>
 
           <ul class="home-contact">
@@ -439,35 +401,34 @@
   <section class="block" id="writing">
     <div class="wrap">
       <div class="block-head">
-        <h2>লেখা</h2>
+        <h2>Writing</h2>
         <span>Recent</span>
       </div>
 
-      <!-- প্রতিটি লেখার এন্ট্রি একটি .post ব্লক — চাইলে href-এ আসল পোস্টের লিংক দিন -->
       <a class="post" href="#">
-        <time>জানুয়ারি ২০২৬</time>
+        <time>January 2026</time>
         <div>
-          <h3>প্রথম লেখার শিরোনাম</h3>
-          <p>এখানে লেখাটির দুই-তিন লাইনের একটা ঝলক থাকবে — পাঠক ক্লিক করার আগে যা পড়ে বুঝে নেবেন লেখাটা কী নিয়ে।</p>
-          <span class="read">পুরোটা পড়ুন</span>
+          <h3>First post title</h3>
+          <p>A short two-to-three line preview goes here — enough for a reader to know what the piece is about before they click through.</p>
+          <span class="read">Read more</span>
         </div>
       </a>
 
       <a class="post" href="#">
-        <time>ডিসেম্বর ২০২৫</time>
+        <time>December 2025</time>
         <div>
-          <h3>দ্বিতীয় লেখার শিরোনাম</h3>
-          <p>দ্বিতীয় লেখার সংক্ষিপ্ত বিবরণ এখানে বসবে। প্রতিটি এন্ট্রি কপি করে নতুন লেখা যোগ করা যাবে।</p>
-          <span class="read">পুরোটা পড়ুন</span>
+          <h3>Second post title</h3>
+          <p>A short summary of the second piece goes here. Duplicate this block for each new entry you add.</p>
+          <span class="read">Read more</span>
         </div>
       </a>
 
       <a class="post" href="#">
-        <time>নভেম্বর ২০২৫</time>
+        <time>November 2025</time>
         <div>
-          <h3>তৃতীয় লেখার শিরোনাম</h3>
-          <p>তৃতীয় লেখার সংক্ষিপ্ত বিবরণ। প্রয়োজনমতো এই তালিকায় আরও এন্ট্রি যোগ করা যায়।</p>
-          <span class="read">পুরোটা পড়ুন</span>
+          <h3>Third post title</h3>
+          <p>A short summary of the third piece. Add as many entries to this list as you like.</p>
+          <span class="read">Read more</span>
         </div>
       </a>
     </div>
@@ -476,28 +437,26 @@
   <section class="block" id="photos">
     <div class="wrap">
       <div class="block-head">
-        <h2>ছবি</h2>
-        <span>নির্বাচিত ফ্রেম</span>
+        <h2>Photos</h2>
+        <span>Selected frames</span>
       </div>
 
-      <!-- প্রতিটি .frame-এর ভেতরে <img src="আপনার-ছবির-লিংক"> বসিয়ে placeholder সরিয়ে দিন -->
       <div class="gallery">
-        <div class="frame"><span class="ph-label">ছবি ১<br>এখানে বসবে</span></div>
-        <div class="frame"><span class="ph-label">ছবি ২<br>এখানে বসবে</span></div>
-        <div class="frame"><span class="ph-label">ছবি ৩<br>এখানে বসবে</span></div>
-        <div class="frame"><span class="ph-label">ছবি ৪<br>এখানে বসবে</span></div>
-        <div class="frame"><span class="ph-label">ছবি ৫<br>এখানে বসবে</span></div>
-        <div class="frame"><span class="ph-label">ছবি ৬<br>এখানে বসবে</span></div>
+        <div class="frame"><span class="ph-label">Photo 1<br>goes here</span></div>
+        <div class="frame"><span class="ph-label">Photo 2<br>goes here</span></div>
+        <div class="frame"><span class="ph-label">Photo 3<br>goes here</span></div>
+        <div class="frame"><span class="ph-label">Photo 4<br>goes here</span></div>
+        <div class="frame"><span class="ph-label">Photo 5<br>goes here</span></div>
+        <div class="frame"><span class="ph-label">Photo 6<br>goes here</span></div>
       </div>
     </div>
   </section>
-
 
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <div class="fineprint">© <span id="year"></span> আপনার নাম। সব লেখা ও ছবির স্বত্ব সংরক্ষিত।</div>
+    <div class="fineprint">© <span id="year"></span> Soumen Mistry. All rights reserved.</div>
   </div>
 </footer>
 
