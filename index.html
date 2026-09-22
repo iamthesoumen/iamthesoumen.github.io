@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আপনার নাম — লেখা ও ছবি</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600&family=Noto+Sans+Bengali:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #eef4ee;
+    --ink: #16241a;
+    --ink-soft: #4f6b56;
+    --line: #cfe0d2;
+    --line-strong: #1f5c3a;
+    --accent: #1f5c3a;
+    --accent-soft: #2f7a4d;
+
+    --font-serif: "Noto Serif Bengali", "Fraunces", Georgia, serif;
+    --font-sans: "Noto Sans Bengali", "Inter", -apple-system, sans-serif;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1712;
+      --bg-alt: #16211a;
+      --ink: #eaf3ec;
+      --ink-soft: #9db8a4;
+      --line: #24352a;
+      --line-strong: #6fbf8b;
+      --accent: #6fbf8b;
+      --accent-soft: #56a375;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1712;
+    --bg-alt: #16211a;
+    --ink: #eaf3ec;
+    --ink-soft: #9db8a4;
+    --line: #24352a;
+    --line-strong: #6fbf8b;
+    --accent: #6fbf8b;
+    --accent-soft: #56a375;
+  }
+
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    transition: background .3s ease, color .3s ease;
+  }
+
+  img, svg { max-width: 100%; display: block; }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  a { color: inherit; }
+
+  /* ---------- header ---------- */
+
+  header.site {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    gap: 16px;
+  }
+
+  .brand {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+
+  nav.primary {
+    display: flex;
+    gap: 28px;
+    font-size: 0.92rem;
+  }
+
+  nav.primary a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  nav.primary a:hover,
+  nav.primary a:focus-visible {
+    color: var(--accent);
+  }
+
+  /* ---------- hero ---------- */
+
+  .home {
+    padding: 64px 0 88px;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise .8s ease forwards .1s;
+  }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home { animation: none; opacity: 1; transform: none; }
+  }
+
+  .home-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 380px) 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .home-photo {
+    aspect-ratio: 4 / 5;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .home-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .home-photo .ph-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .home-info h1 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 4.4vw, 2.9rem);
+    line-height: 1.25;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+
+  .home-role {
+    color: var(--accent);
+    font-size: 1rem;
+    margin: 0 0 28px;
+  }
+
+  .home-about p {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    margin: 0 0 18px;
+    max-width: 54ch;
+  }
+
+  .home-contact {
+    list-style: none;
+    margin: 32px 0 0;
+    padding: 20px 0 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .home-contact li {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 0.95rem;
+  }
+
+  .home-contact .label {
+    color: var(--ink-soft);
+    min-width: 6.5em;
+  }
+
+  .home-contact a {
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .home-contact a:hover { color: var(--accent-soft); }
+
+  @media (max-width: 680px) {
+    .home-grid { grid-template-columns: 1fr; gap: 32px; }
+    .home-photo { max-width: 320px; }
+  }
+
+  /* ---------- section scaffolding ---------- */
+
+  section.block {
+    padding: 72px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .block-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 44px;
+    gap: 16px;
+  }
+
+  .block-head h2 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .block-head span {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  /* ---------- writing ---------- */
+
+  .post {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .post:first-of-type { border-top: none; }
+
+  .post time {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    padding-top: 4px;
+  }
+
+  .post h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 8px;
+  }
+
+  .post p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+    max-width: 60ch;
+  }
+
+  .post .read {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+  }
+
+  @media (max-width: 560px) {
+    .post { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  /* ---------- gallery ---------- */
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .frame {
+    aspect-ratio: 4 / 5;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: transform .5s ease;
+  }
+
+  .frame:hover img { transform: scale(1.04); }
+
+  .frame .ph-label {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    text-align: center;
+    padding: 10px;
+  }
+
+  @media (max-width: 620px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ---------- about ---------- */
+
+  .about-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 62ch;
+  }
+
+  .about-body p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+
+  /* ---------- contact / footer ---------- */
+
+  footer.site {
+    padding: 60px 0 80px;
+    border-top: 1px solid var(--line);
+  }
+
+  footer.site h2 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin: 0 0 18px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+
+  .contact-links a { text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px; color: var(--ink); }
+
+  .fineprint {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap header-row">
+    <a class="brand" href="#top"><!-- এখানে আপনার নাম --> আপনার নাম</a>
+    <nav class="primary">
+      <a href="#top">হোম</a>
+      <a href="#writing">লেখা</a>
+      <a href="#photos">ছবি</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap">
+    <section class="home">
+      <div class="home-grid">
+
+        <!-- মূল ছবি — <img src="আপনার-ছবির-লিংক"> বসিয়ে placeholder সরিয়ে দিন -->
+        <div class="home-photo">
+          <span class="ph-label">প্রধান ছবি<br>এখানে বসবে</span>
+        </div>
+
+        <div class="home-info">
+          <!-- নাম -->
+          <h1>আপনার নাম</h1>
+          <!-- এক লাইনে কী করেন -->
+          <p class="home-role">লেখক ও আলোকচিত্রী</p>
+
+          <div class="home-about">
+            <!-- নিজের সম্পর্কে বিস্তারিত — কে আপনি, কী করেন -->
+            <p>এখানে নিজের সম্পর্কে লিখুন — কে আপনি, কী নিয়ে কাজ করেন, কোন বিষয়গুলো আপনাকে টানে। এই অংশ থেকেই দর্শনার্থী প্রথম আপনাকে চিনবেন, তাই ভাষা রাখুন সহজ আর সরাসরি।</p>
+            <p>দ্বিতীয় প্যারাগ্রাফে যোগ করতে পারেন অভিজ্ঞতা, বর্তমানে যা নিয়ে কাজ করছেন, বা আগ্রহের জায়গাগুলো।</p>
+          </div>
+
+          <ul class="home-contact">
+            <li><span class="label">ইমেইল</span><a href="mailto:email@example.com">email@example.com</a></li>
+            <li><span class="label">ইনস্টাগ্রাম</span><a href="#">@আপনার_আইডি</a></li>
+            <li><span class="label">টুইটার</span><a href="#">@আপনার_আইডি</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <section class="block" id="writing">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>লেখা</h2>
+        <span>সাম্প্রতিক লেখাগুলো</span>
+      </div>
+
+      <!-- প্রতিটি লেখার এন্ট্রি একটি .post ব্লক — চাইলে href-এ আসল পোস্টের লিংক দিন -->
+      <a class="post" href="#">
+        <time>জানুয়ারি ২০২৬</time>
+        <div>
+          <h3>প্রথম লেখার শিরোনাম</h3>
+          <p>এখানে লেখাটির দুই-তিন লাইনের একটা ঝলক থাকবে — পাঠক ক্লিক করার আগে যা পড়ে বুঝে নেবেন লেখাটা কী নিয়ে।</p>
+          <span class="read">পুরোটা পড়ুন</span>
+        </div>
+      </a>
+
+      <a class="post" href="#">
+        <time>ডিসেম্বর ২০২৫</time>
+        <div>
+          <h3>দ্বিতীয় লেখার শিরোনাম</h3>
+          <p>দ্বিতীয় লেখার সংক্ষিপ্ত বিবরণ এখানে বসবে। প্রতিটি এন্ট্রি কপি করে নতুন লেখা যোগ করা যাবে।</p>
+          <span class="read">পুরোটা পড়ুন</span>
+        </div>
+      </a>
+
+      <a class="post" href="#">
+        <time>নভেম্বর ২০২৫</time>
+        <div>
+          <h3>তৃতীয় লেখার শিরোনাম</h3>
+          <p>তৃতীয় লেখার সংক্ষিপ্ত বিবরণ। প্রয়োজনমতো এই তালিকায় আরও এন্ট্রি যোগ করা যায়।</p>
+          <span class="read">পুরোটা পড়ুন</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="block" id="photos">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>ছবি</h2>
+        <span>নির্বাচিত ফ্রেম</span>
+      </div>
+
+      <!-- প্রতিটি .frame-এর ভেতরে <img src="আপনার-ছবির-লিংক"> বসিয়ে placeholder সরিয়ে দিন -->
+      <div class="gallery">
+        <div class="frame"><span class="ph-label">ছবি ১<br>এখানে বসবে</span></div>
+        <div class="frame"><span class="ph-label">ছবি ২<br>এখানে বসবে</span></div>
+        <div class="frame"><span class="ph-label">ছবি ৩<br>এখানে বসবে</span></div>
+        <div class="frame"><span class="ph-label">ছবি ৪<br>এখানে বসবে</span></div>
+        <div class="frame"><span class="ph-label">ছবি ৫<br>এখানে বসবে</span></div>
+        <div class="frame"><span class="ph-label">ছবি ৬<br>এখানে বসবে</span></div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fineprint">© <span id="year"></span> আপনার নাম। সব লেখা ও ছবির স্বত্ব সংরক্ষিত।</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
