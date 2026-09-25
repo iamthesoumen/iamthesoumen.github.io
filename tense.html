@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tense — Soumen Mistry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@300;400;500&family=Noto+Serif+Bengali:wght@400;500;600&family=Noto+Sans+Bengali:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #eef4ee;
+    --ink: #16241a;
+    --ink-soft: #4f6b56;
+    --line: #cfe0d2;
+    --accent: #1f5c3a;
+    --accent-soft: #2f7a4d;
+
+    --font-serif: "Fraunces", "Noto Serif Bengali", Georgia, serif;
+    --font-sans: "Inter", "Noto Sans Bengali", -apple-system, sans-serif;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1712;
+      --bg-alt: #16211a;
+      --ink: #eaf3ec;
+      --ink-soft: #9db8a4;
+      --line: #24352a;
+      --accent: #6fbf8b;
+      --accent-soft: #56a375;
+    }
+  }
+
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  a { color: inherit; }
+
+  header.site {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+
+  .header-row { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+
+  .back {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .back:hover { color: var(--accent); }
+
+  article { padding: 48px 0 90px; }
+
+  .meta {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  h1.title {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    margin: 0 0 28px;
+    line-height: 1.3;
+  }
+
+  .intro {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    margin: 0 0 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .intro ul { margin: 14px 0 0; padding-left: 20px; }
+  .intro li { margin-bottom: 4px; }
+
+  h2.tense {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin: 52px 0 6px;
+  }
+
+  h3.sub {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin: 30px 0 10px;
+  }
+
+  .rule {
+    color: var(--ink);
+    font-size: 1rem;
+    margin: 0 0 14px;
+  }
+
+  .examples {
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 0;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+
+  .examples li {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .examples li:first-child { border-top: none; }
+
+  .examples .bn { color: var(--ink); }
+  .examples .en { color: var(--accent-soft); font-style: italic; }
+
+  .byline {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+
+  .byline strong { color: var(--ink); font-family: var(--font-serif); font-weight: 500; }
+
+  footer.site {
+    padding: 40px 0 70px;
+    border-top: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap header-row">
+    <a class="back" href="../index.html#writing">← Writing</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <article>
+      <div class="meta">Grammar Notes · English</div>
+      <h1 class="title">Tense</h1>
+
+      <div class="intro">
+        <p>ক্রিয়ার কালকে সংক্ষেপে Tense বলে। Tense সাধারণত ৩ প্রকার —</p>
+        <ul>
+          <li>Present tense (বর্তমান কাল)</li>
+          <li>Past tense (অতীত কাল)</li>
+          <li>Future tense (ভবিষ্যত কাল)</li>
+        </ul>
+        <p style="margin-top:14px;">প্রতিটি কালকে আবার ৪ ভাগে ভাগ করা যায় — Indefinite, Continuous, Perfect, এবং Perfect continuous।</p>
+      </div>
+
+      <h2 class="tense">➤ Indefinite</h2>
+
+      <h3 class="sub">Present Indefinite</h3>
+      <p class="rule">বর্তমানে কোনো নিয়মিত বা অভ্যাসগত এবং চিরসত্য কোনো কাজ বোঝালে Present Indefinite Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">আমি ভাত খাই</span> — <span class="en">I eat rice.</span></li>
+        <li><span class="bn">আমি স্কুলে যাই</span> — <span class="en">I go to school.</span></li>
+        <li><span class="bn">সে প্রতিদিন স্কুলে যায়</span> — <span class="en">He goes to school every day.</span></li>
+        <li><span class="bn">তুমি বই পড়</span> — <span class="en">You read books.</span></li>
+        <li><span class="bn">সূর্য পূর্ব দিকে উদিত হয়</span> — <span class="en">The sun rises in the East.</span></li>
+        <li><span class="bn">পানি শূন্য ডিগ্রি সেন্ট্রিগ্রেডে জমাট বাঁধে</span> — <span class="en">Water freezes at 0° centigrade.</span></li>
+      </ul>
+
+      <h3 class="sub">Past Indefinite</h3>
+      <p class="rule">অতীতের অভ্যাসগত কোনো কাজ বোঝাতে, যার ফল বর্তমানে বিদ্যমান নেই, তাকে Past Indefinite Tense বলে।</p>
+      <ul class="examples">
+        <li><span class="bn">আমি ভাত খেয়েছিলাম</span> — <span class="en">I ate rice.</span></li>
+        <li><span class="bn">আমি স্কুলে গিয়েছিলাম</span> — <span class="en">I went to school.</span></li>
+        <li><span class="bn">তার ছেলেবেলা লন্ডনে কেটেছিল</span> — <span class="en">He spent his boyhood in London.</span></li>
+        <li><span class="bn">লুনা একটি গান গেয়েছিল</span> — <span class="en">Luna sang a song.</span></li>
+        <li><span class="bn">সে ফুটবল খেলেছিল</span> — <span class="en">He played football.</span></li>
+      </ul>
+
+      <h3 class="sub">Future Indefinite</h3>
+      <p class="rule">ভবিষ্যতে কোনো কাজ ঘটবে এরূপ বোঝালে Future Indefinite Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">আমি কাজটি করব</span> — <span class="en">I will/shall do the work.</span></li>
+        <li><span class="bn">তারা কাজটি করবে</span> — <span class="en">They will/shall do the work.</span></li>
+        <li><span class="bn">সে বিদ্যালয়ে যাবে</span> — <span class="en">He will go to the school.</span></li>
+        <li><span class="bn">তারা বাজারে যাবে</span> — <span class="en">They will go to the market.</span></li>
+      </ul>
+
+      <h2 class="tense">➤ Continuous</h2>
+
+      <h3 class="sub">Present Continuous</h3>
+      <p class="rule">বর্তমানে কোনো কাজ চলছে বা নিকট ভবিষ্যতে চলবে এরূপ বোঝালে Present Continuous Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">আমি ভাত খাচ্ছি</span> — <span class="en">I am eating rice.</span></li>
+        <li><span class="bn">সে স্কুলে যাচ্ছে</span> — <span class="en">He is going to school.</span></li>
+        <li><span class="bn">তুমি/তোমরা বই পড়ছ</span> — <span class="en">You are reading book.</span></li>
+        <li><span class="bn">আমি আজ রাতে ঢাকা যাব</span> — <span class="en">I am going to Dhaka tonight.</span></li>
+        <li><span class="bn">আপনি কি আজ বিকালে মিটিংয়ে আসছেন?</span> — <span class="en">Are you coming to the meeting this afternoon?</span></li>
+      </ul>
+
+      <h3 class="sub">Past Continuous</h3>
+      <p class="rule">অতীতকালে কোনো কাজ কিছুক্ষণ ধরে চলছিল এরূপ বোঝালে Past Continuous Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">আমি ভাত খাচ্ছিলাম</span> — <span class="en">I was eating rice.</span></li>
+        <li><span class="bn">সে স্কুলে যাচ্ছিল</span> — <span class="en">He was going to school.</span></li>
+        <li><span class="bn">তারা ফুটবল খেলছিল</span> — <span class="en">They were playing football.</span></li>
+        <li><span class="bn">আমি একা একা গান গাচ্ছিলাম</span> — <span class="en">I was singing song alone.</span></li>
+      </ul>
+
+      <h3 class="sub">Future Continuous</h3>
+      <p class="rule">ভবিষ্যৎকালে কোনো কাজ চলতে থাকবে এরূপ বোঝালে Future Continuous Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">আমি বইটি পড়তে থাকব</span> — <span class="en">I shall be reading the book.</span></li>
+        <li><span class="bn">তারা ফুটবল খেলতে থাকবে</span> — <span class="en">They will be playing football.</span></li>
+        <li><span class="bn">সে কাজটি করতে থাকবে</span> — <span class="en">He will be doing the work.</span></li>
+        <li><span class="bn">তিনি অফিসে যাইতে থাকবেন</span> — <span class="en">He will be going to office.</span></li>
+      </ul>
+
+      <h2 class="tense">➤ Perfect</h2>
+
+      <h3 class="sub">Present Perfect</h3>
+      <p class="rule">কোনো কাজ মাত্র শেষ হয়েছে অথচ তার ফল এখনও রয়েছে, এরূপ বোঝালে Present Perfect Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">আমি ভাত খেয়েছি</span> — <span class="en">I have eaten rice.</span></li>
+        <li><span class="bn">সে স্কুলে গিয়েছে</span> — <span class="en">He has gone to school.</span></li>
+        <li><span class="bn">তারা কাজটি করেছে</span> — <span class="en">They have done the work.</span></li>
+        <li><span class="bn">তারা এইমাত্র ফুটবল খেলেছে</span> — <span class="en">They have just played football.</span></li>
+      </ul>
+
+      <h3 class="sub">Past Perfect</h3>
+      <p class="rule">অতীতে দুটি কাজ সম্পন্ন হলে প্রথমটি Past Perfect Tense এবং পরেরটি Simple Past Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">আমি ভাত খাওয়ার পূর্বে সে বাড়ি এলো</span> — <span class="en">He had come home before I ate rice.</span></li>
+        <li><span class="bn">ঘণ্টা পড়ার পূর্বে তারা স্টেশনে পৌঁছাল</span> — <span class="en">They had reached the station before the bell rang.</span></li>
+        <li><span class="bn">বিছানায় শুতে যাবার পূর্বে আমি দরজাটা বন্ধ করলাম</span> — <span class="en">I had shut the door before I got into bed.</span></li>
+      </ul>
+
+      <h3 class="sub">Future Perfect</h3>
+      <p class="rule">ভবিষ্যৎকালে দুটি কাজের মধ্যে যেটি আগে হবে তা Future Perfect Tense হয়, পরেরটি Simple Present Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">বাবা আসার পূর্বে আমি কাজটি করে থাকব</span> — <span class="en">I shall have done the work before my father comes.</span></li>
+        <li><span class="bn">আমি বিকাল চারটার মধ্যে বইটি পড়ে থাকব</span> — <span class="en">I shall have finished reading the book by 4 p.m.</span></li>
+        <li><span class="bn">তারা আসার পূর্বে আমি পড়া শেষ করব</span> — <span class="en">I shall have finished my lesson before they come.</span></li>
+      </ul>
+
+      <h2 class="tense">➤ Perfect Continuous</h2>
+
+      <h3 class="sub">Present Perfect Continuous</h3>
+      <p class="rule">কোনো কাজ পূর্বে আরম্ভ হয়ে এখনও চলছে এরূপ বোঝালে Present Perfect Continuous Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">আমি দুই দিন ধরে কাজটি করছি</span> — <span class="en">I have been doing this work for two days.</span></li>
+        <li><span class="bn">সে সকাল থেকে পড়ছে</span> — <span class="en">He has been reading since morning.</span></li>
+        <li><span class="bn">সে তিন বছর যাবৎ এই স্কুলে পড়ছে</span> — <span class="en">He/She has been reading in this school for three years.</span></li>
+        <li><span class="bn">ফাহিম গত সোমবার হতে জ্বরে ভুগছে</span> — <span class="en">Fahim has been suffering from fever since last Sunday.</span></li>
+      </ul>
+
+      <h3 class="sub">Past Perfect Continuous</h3>
+      <p class="rule">অতীতকালে কোনো কাজ কোনো বিশেষ সময়ের পূর্বে আরম্ভ হয়ে সেই সময় পর্যন্ত চলছিল বোঝালে Past Perfect Continuous Tense হয়। দুটি ক্রিয়া থাকলে যেটি আগে চলছিল সেটিই এই কাল হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">সে যখন এলো তখন আমি ভাত খাচ্ছিলাম</span> — <span class="en">I had been eating rice when he came.</span></li>
+        <li><span class="bn">ঘণ্টা পড়ার পূর্বে আমরা খেলছিলাম</span> — <span class="en">We were playing before the bell rang.</span></li>
+        <li><span class="bn">তুমি যখন তোমার বন্ধুর বাড়িতে গিয়েছিলে তখন তোমার মা তোমার জন্য অপেক্ষা করছিল</span> — <span class="en">Your mother had been waiting for you when you went to your friend's home.</span></li>
+      </ul>
+
+      <h3 class="sub">Future Perfect Continuous</h3>
+      <p class="rule">ভবিষ্যৎকালে দুটি কাজের মধ্যে যেটি আগে চলতে থাকবে তা Future Perfect Continuous Tense হয়, পরেরটি Simple Present Tense হয়।</p>
+      <ul class="examples">
+        <li><span class="bn">তুমি ফিরে না আসা পর্যন্ত আমরা তোমার জন্য অপেক্ষা করতে থাকব</span> — <span class="en">We shall have been waiting for you until you come back.</span></li>
+        <li><span class="bn">বাবা আসার আগে আমি কাজটি করতে থাকব</span> — <span class="en">I shall have been doing the work before my father comes.</span></li>
+        <li><span class="bn">সে ডিগ্রি পাওয়ার পূর্বে চার বছর ঢাকা বিশ্ববিদ্যালয়ে পড়তে থাকবে</span> — <span class="en">He will have been studying at Dhaka University for four years before he gets his degree.</span></li>
+      </ul>
+
+      <div class="byline">
+        Written and made by <strong>Soumen Mistry</strong><br>
+        B.A (Hon's) in English<br>
+        যেকোনো প্রয়োজনে যোগাযোগ করুন — 01855061821, 01577000952
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">© <span id="year"></span> Soumen Mistry.</div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
